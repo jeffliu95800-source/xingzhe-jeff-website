@@ -1,0 +1,278 @@
+/* About Page */
+.about-page {
+  padding-bottom: 8rem;
+}
+
+.header-back,
+.header-title {
+  display: flex;
+  align-items: center;
+}
+
+.header-back a {
+  transition: opacity 0.3s ease;
+}
+
+.header-back a:hover {
+  opacity: 0.7;
+}
+
+/* Intro Section */
+.about-intro {
+  padding: 10rem 0 6rem;
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.about-title {
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 3rem;
+}
+
+.about-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.about-intro-visual {
+  position: sticky;
+  top: 10rem;
+}
+
+.about-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 3rem;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--color-text-muted);
+}
+
+/* Skills Section */
+.about-skills {
+  padding: 6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.skill-item {
+  opacity: 0;
+}
+
+.skill-name {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.skill-level {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.skill-line {
+  height: 1px;
+  background: var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-text);
+  transform: translateX(-100%);
+  animation: skillFill 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes skillFill {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Timeline Section */
+.about-timeline {
+  padding: 6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.timeline-list {
+  max-width: 800px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 3rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
+  opacity: 0;
+}
+
+.timeline-year {
+  padding-top: 0.25rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: var(--color-text-muted);
+}
+
+/* Contact Section */
+.about-contact {
+  padding: 6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 4rem;
+}
+
+.contact-email {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.contact-email:hover {
+  opacity: 0.7;
+}
+
+.contact-social {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-social a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.contact-social a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-text);
+  transition: width 0.3s ease;
+}
+
+.contact-social a:hover {
+  color: var(--color-text);
+}
+
+.contact-social a:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .about-intro-visual {
+    position: static;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    padding: 8rem 0 4rem;
+  }
+  
+  .about-title {
+    font-size: 4rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
