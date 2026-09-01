@@ -43,7 +43,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://xingzhe-jeff.netlify.app',
   },
-},
 }
 
 export default function RootLayout({
