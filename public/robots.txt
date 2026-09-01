@@ -1,0 +1,5 @@
+# 行者Jeff个人网站
+User-agent: *
+Allow: /
+
+Sitemap: https://xingzhe-jeff.netlify.app/sitemap.xml
