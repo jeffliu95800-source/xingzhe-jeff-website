@@ -325,6 +325,13 @@
   opacity: 1;
 }
 
+/* 移动端隐藏鼠标跟随 */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-follower {
+    display: none !important;
+  }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .hero-grid {

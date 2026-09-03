@@ -124,6 +124,10 @@ function CustomCursor() {
   }, [])
   const size = variant === 'hover' ? 56 : variant === 'text' ? 60 : 40
   const color = variant === 'hover' ? 'rgba(255, 255, 255, 0.8)' : variant === 'text' ? 'rgba(6, 182, 212, 0.6)' : 'rgba(255, 255, 255, 0.3)'
+  // 触摸设备直接不渲染
+  if (typeof window !== 'undefined' && window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    return null
+  }
   return (
     <>
       <div ref={ringRef} style={{

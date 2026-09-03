@@ -37,3 +37,78 @@ a[aria-label*="Netlify"] {
   height: 0 !important;
   width: 0 !important;
 }
+
+
+/* ========== 强力移动端适配（覆盖内联样式）========== */
+@media (max-width: 768px) {
+  /* 所有 section 减小 padding */
+  section {
+    padding: 60px 20px !important;
+  }
+
+  /* Hero 特殊处理 */
+  #hero {
+    padding: 100px 16px 60px !important;
+    min-height: auto !important;
+  }
+
+  /* 所有 grid 强制单列 */
+  div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Hero 内容 */
+  div[style*="gridTemplateColumns="1.4fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Work/Skills/Books/Experience 区域 */
+  div[style*="gridTemplateColumns="repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  div[style*="gridTemplateColumns="repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  div[style*="gridTemplateColumns="repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* 标题字体缩小 */
+  h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+  }
+
+  /* Contact CTA 卡片 */
+  div[style*="padding: 80px 60px"] {
+    padding: 40px 24px !important;
+  }
+
+  /* 减小字体大小 */
+  div[style*="fontSize: 56px"],
+  div[style*="fontSize: 48px"] {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 小屏手机更紧凑 */
+  section {
+    padding: 40px 16px !important;
+  }
+
+  /* 隐藏装饰元素（节省空间） */
+  div[style*="filter: blur(80px)"] {
+    display: none !important;
+  }
+}
