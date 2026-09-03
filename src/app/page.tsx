@@ -559,7 +559,7 @@ export default function Home() {
             flexShrink: 0
           }}>
             <img 
-              src="/images/avatar.png" 
+              src="/images/avatar.jpg" 
               alt="Jeff"
               style={{
                 width: '100%',
@@ -968,7 +968,7 @@ export default function Home() {
               <Glass style={{ padding: '0', aspectRatio: '4/5', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', position: 'relative' }}>
                 <div style={{
                   position: 'absolute', inset: 0,
-                  backgroundImage: 'url(/images/avatar.png)',
+                  backgroundImage: 'url(/images/avatar.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center 25%',
                   zIndex: 0

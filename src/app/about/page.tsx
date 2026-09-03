@@ -64,9 +64,11 @@ export default function About() {
               </div>
               <div className="about-intro-visual">
                 <div className="about-avatar">
-                  <div className="avatar-placeholder">
-                    <span>YN</span>
-                  </div>
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="行者 Jeff"
+                    className="avatar-image"
+                  />
                 </div>
                 <div className="about-stats">
                   <div className="stat">
