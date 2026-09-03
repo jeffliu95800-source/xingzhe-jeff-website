@@ -250,7 +250,8 @@ const projects = [
     desc: '作为 FDE 承接 AI 模块现场落地。完成政务内网私有化部署就位；核验网络/权限/算力约束；知识库业务数据灌入与业务侧调参；现场实测真实政务样本下输出效果；复现检索偏差、模型越权等问题，采集样本日志回流研发；跟进迭代做现场回归验证；输出政务环境运维配置手册，配合项目团队完成系统投产。',
     tech: ['政务内网', '私有化部署', '业务调参', '样本回流'],
     gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
-    videoSrc: '/projects/gov-platform-2.mov'
+    videoSrc: '/projects/gov-platform-2.mov',
+    poster: '/projects/posters/gov-platform-2.jpg'
   },
   {
     num: '02',
@@ -260,7 +261,8 @@ const projects = [
     desc: '承担项目 FDE 现场工作。完成养老业务 AI 组件私有化部署就位；面向养老业务场景完成知识库校准、提示词业务调优；现场观测老人风险研判、智能咨询等真实业务表现；复现边界场景失效、回答偏离业务规范等问题；整理业务样本同步研发；版本更新后完成现场回归验证，助力平台通过政府验收。',
     tech: ['养老业务校准', '边界场景复现', '政府验收'],
     gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
-    videoSrc: '/projects/smart-elderly-care.mov'
+    videoSrc: '/projects/smart-elderly-care.mov',
+    poster: '/projects/posters/smart-elderly-care.jpg'
   },
   {
     num: '03',
@@ -270,7 +272,8 @@ const projects = [
     desc: 'FDE 现场落地实施。完成社区 AI 分析组件在客户私有环境部署；核验多源社区业务数据接入后的运行状态；针对事件识别、智能检索能力做业务侧校准；复现高并发场景下响应异常、数据召回错乱等现场现象；整理完整问题材料回流研发；迭代后现场验证，沉淀社区场景适配配置，支撑系统平稳上线。',
     tech: ['高并发场景', '数据接入校准', '问题闭环'],
     gradient: 'linear-gradient(135deg, #10b981, #06b6d4)',
-    videoSrc: '/projects/smart-community.mov'
+    videoSrc: '/projects/smart-community.mov',
+    poster: '/projects/posters/smart-community.jpg'
   },
 {
     num: '04',
@@ -280,7 +283,8 @@ const projects = [
     desc: '作为 FDE 完成 AI 智能分析组件现场部署就位；针对客流研判、运维事件识别能力做业务侧参数校准；在大客流真实业务压力下观测系统表现；复现实时分析异常、识别偏差等问题；采集环境与业务样本回流研发；完成修复版本现场验证，输出园区场景现场适配资产。',
     tech: ['大客流压力', '实时分析', '适配资产'],
     gradient: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
-    videoSrc: '/projects/smart-scenic.mov'
+    videoSrc: '/projects/smart-scenic.mov',
+    poster: '/projects/posters/smart-scenic.jpg'
   },
   {
     num: '05',
@@ -290,7 +294,8 @@ const projects = [
     desc: '作为 FDE 落地智慧园区综合管控平台。完成园区多源数据 AI 分析组件私有化部署；针对园区能耗、安防、设备运维等场景做业务侧参数校准；复现高并发下识别异常等问题；采集现场样本回流研发；完成修复版本现场验证，沉淀园区场景完整适配资产。',
     tech: ['园区综合管控', '多源数据', 'FDE 闭环'],
     gradient: 'linear-gradient(135deg, #ec4899, #f59e0b)',
-    videoSrc: '/projects/smart-park-2.mov'
+    videoSrc: '/projects/smart-park-2.mov',
+    poster: '/projects/posters/smart-park-2.jpg'
   },
   {
     num: '06',
@@ -1238,7 +1243,24 @@ export default function Home() {
                           muted
                           loop
                           playsInline
-                          autoPlay
+                          preload="none"
+                          poster={p.poster || undefined}
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            const parent = e.currentTarget.parentElement;
+                            if (parent) parent.style.background = p.gradient;
+                          }}
+                          ref={(el) => {
+                            if (!el) return;
+                            // 移动端不自动播放（避免加载45M视频失败）
+                            const isMobile = window.innerWidth < 768;
+                            if (isMobile) {
+                              el.pause();
+                              el.removeAttribute('autoplay');
+                            } else {
+                              el.play().catch(() => {});
+                            }
+                          }}
                           style={{
                             width: '100%',
                             height: '100%',

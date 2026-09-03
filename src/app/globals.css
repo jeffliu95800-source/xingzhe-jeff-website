@@ -22,3 +22,18 @@ img { display: block; max-width: 100%; height: auto; }
 ::-webkit-scrollbar-track { background: #05070d; }
 ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+
+/* 隐藏 Netlify 自动注入的 Powered by Netlify badge */
+a[href*="netlify.com"][data-testid="footer-credit"],
+a[href*="netlify.com"]:has-text("Powered by Netlify"),
+[data-netlify-badge],
+.netlify-badge,
+a[aria-label*="Netlify"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}
