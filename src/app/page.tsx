@@ -604,6 +604,7 @@ export default function Home() {
             textDecoration: 'none',
             display: 'flex', flexDirection: 'column',
             alignItems: 'center', lineHeight: 1.1,
+            flexShrink: 0,
             color: activeSection === item.id ? '#fff' : 'rgba(255, 255, 255, 0.55)',
             background: activeSection === item.id ? 'rgba(255, 255, 255, 0.08)' : 'transparent',
             transition: 'all 0.3s ease',
@@ -618,7 +619,7 @@ export default function Home() {
                 pointerEvents: 'none'
               }} />
             )}
-            <span style={{ position: 'relative', fontSize: '13px', fontWeight: 500 }}>{item.zh}</span>
+            <span style={{ position: 'relative', fontSize: '13px', fontWeight: 500, whiteSpace: 'nowrap' }}>{item.zh}</span>
             <span style={{
               position: 'relative', fontSize: '8px',
               opacity: 0.5, letterSpacing: '0.1em',
@@ -643,7 +644,7 @@ export default function Home() {
           letterSpacing: '-0.01em',
           transition: 'all 0.2s'
         }}>
-          <span>合作咨询</span>
+          <span style={{ whiteSpace: 'nowrap' }}>合作咨询</span>
           <span style={{
             width: '16px', height: '16px',
             background: '#0a0a0a',
@@ -775,7 +776,7 @@ export default function Home() {
                   <span style={{ fontSize: '18px' }}>→</span>
                 </MagneticButton>
                 <MagneticButton href="#contact" large>
-                  <span>合作咨询</span>
+                  <span style={{ whiteSpace: 'nowrap' }}>合作咨询</span>
                   <span style={{ fontSize: '10px', opacity: 0.6, marginLeft: '4px' }}>CONTACT</span>
                 </MagneticButton>
               </div>
