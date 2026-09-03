@@ -238,7 +238,7 @@
 .marquee-inner {
   display: flex;
   white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 
 .marquee-inner span {

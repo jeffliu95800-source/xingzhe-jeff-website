@@ -778,7 +778,7 @@ export default function Home() {
             <Reveal direction="up" delay={0.4}>
               
 
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
                 <MagneticButton primary href="#work" large>
                   <span>查看项目</span>
                   <span style={{ fontSize: '10px', opacity: 0.6, marginLeft: '4px' }}>WORK</span>
@@ -787,6 +787,7 @@ export default function Home() {
                 <MagneticButton href="#contact" large>
                   <span style={{ whiteSpace: 'nowrap' }}>合作咨询</span>
                   <span style={{ fontSize: '10px', opacity: 0.6, marginLeft: '4px' }}>CONTACT</span>
+                  <span style={{ fontSize: '18px' }}>→</span>
                 </MagneticButton>
               </div>
             </Reveal>
@@ -993,15 +994,27 @@ export default function Home() {
                   {/* 顶部：编号 + AVAILABLE */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{
-                      fontSize: '10px', letterSpacing: '0.2em',
-                      color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase',
+                      display: 'flex', alignItems: 'center', gap: '8px',
                       backdropFilter: 'blur(20px)',
                       background: 'rgba(0,0,0,0.3)',
-                      padding: '6px 12px',
+                      padding: '5px 14px 5px 5px',
                       borderRadius: '100px',
-                      border: '1px solid rgba(255,255,255,0.1)'
+                      border: '1px solid rgba(6, 182, 212, 0.3)'
                     }}>
-                      PORTRAIT · 01
+                      <span style={{
+                        width: '24px', height: '24px',
+                        borderRadius: '50%',
+                        background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: '11px', fontWeight: 800, color: '#fff',
+                        fontFamily: 'JetBrains Mono, monospace',
+                        letterSpacing: '-0.05em'
+                      }}>FDE</span>
+                      <span style={{
+                        fontSize: '10px', letterSpacing: '0.15em',
+                        color: 'rgba(255,255,255,0.85)',
+                        textTransform: 'uppercase', fontWeight: 500
+                      }}>PRACTITIONER</span>
                     </div>
                     <div style={{
                       color: '#10b981', display: 'flex', alignItems: 'center', gap: '6px',
