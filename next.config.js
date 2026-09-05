@@ -2,8 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // 启用静态导出（如果需要）
-  // output: 'export',
+  // 启用静态导出（Pages 25M 限制绕过）
+  output: 'export',
+  images: { unoptimized: true },  // 静态导出必须
   // 排除视频/图片，避免被打包到 server bundle（Pages 25M 限制）
   outputFileTracingExcludes: {
     '*': [
